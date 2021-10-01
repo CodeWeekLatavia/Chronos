@@ -1,13 +1,17 @@
 import React from "react";
 import { AppNavigator } from "./src/routes/AppNavigator";
-import Amplify from "aws-amplify";
-import config from "./src/aws-exports";
-import { withAuthenticator } from "aws-amplify-react-native";
 
-Amplify.configure(config);
+import { Provider } from 'react-redux'; //Redux stuff
+import store from './src/Redux/store';
 
-function App() {
-  return <AppNavigator />;
+function App(){
+  return (
+    <Provider store={store}>
+      <AppNavigator />
+    </Provider>
+          
+  );
 }
 
-export default withAuthenticator(App);
+
+export default App;

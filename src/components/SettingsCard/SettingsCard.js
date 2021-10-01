@@ -6,7 +6,7 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 
 function SettingsCard(props) {
     return (
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => props.navigation.navigate("Settings", { screen: props.screen })}>
         <View style={styles.container}>
             <View style={[styles.icon, {backgroundColor: props.color}]}> 
                 <MaterialCommunityIcons name={props.icon} color="white" size={30}/>
